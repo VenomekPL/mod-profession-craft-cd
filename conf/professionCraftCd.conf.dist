@@ -1,0 +1,16 @@
+#
+# mod-profession-craft-cd
+#
+# Removes Classic / TBC / WotLK profession craft spell cooldowns via
+# spell_cooldown_overrides (SQL). Does not change crafted-item use CDs
+# (Salt Shaker, gadgets, potions, hearthstones).
+#
+# Companion core skill-up (set in worldserver.conf, not this module):
+#   SkillGain.Crafting = 3
+#
+[worldserver]
+
+# ProfessionCraftCd.Enabled
+#        Description: Log module presence at startup. Cooldown removal is SQL-baked.
+#        Default:     1 (enabled)
+ProfessionCraftCd.Enabled = 1
