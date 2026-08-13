@@ -1,7 +1,8 @@
 -- Remove Classic / TBC / WotLK profession craft spell cooldowns.
 -- Reload: restart worldserver (spell_cooldown_overrides load at startup).
--- Scope: TRADE craft spells only. Does NOT touch Salt Shaker item CD,
---        Wormhole gadget uses, hearthstones, potions, or combat CDs.
+-- Scope: TRADE craft spells. Salt Shaker is in 2026_08_13_00_*.sql
+--        (item_template + spell 19566). Does not touch Wormhole gadget
+--        uses, hearthstones, potions, or combat CDs.
 
 DELETE FROM `spell_cooldown_overrides` WHERE `Id` IN (
     -- Classic tailoring / alchemy (often already 0 in 3.3.5 DBC; force zero vs IP restore)
