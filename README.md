@@ -18,8 +18,12 @@ research, JC prisms, enchanting spheres, Glacial Bag, **Salt Shaker**, etc.).
 - Hearthstone, potions, combat spells
 - Gathering professions
 
-Client tooltips may still show a cooldown until cache/DBC is refreshed; the
-**server** enforces zero CD after the SQL update and a worldserver restart.
+After a successful craft the 3.3.5 client still starts the **Spell.dbc** timer
+unless the server pushes `SMSG_SPELL_COOLDOWN` from `spell_cooldown_overrides`
+(same pattern as hearthstone). Core + this module send a 1 ms packet plus
+`SMSG_CLEAR_COOLDOWN` for category 310 siblings so the client adopts the
+database CD. Optional:
+`scripts/patch-profession-craft-dbc.sh` + clear `Cache/` so tooltips match.
 
 ## Allowlist (summary)
 
